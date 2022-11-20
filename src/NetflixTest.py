@@ -20,14 +20,21 @@ def test_abrir_ficherocsv(fichero):
     print('Los cinco últimos registros son:',LISTA_TUPLAS[-5:])
 
 '''
--------------------------------------------------------------------------------------------------------
+----------------------------------Entrega 2---------------------------------------------------------------------
 '''
+def test_ProgramasDeTV_porAño(registros, type):
+    print("="*50 + "test_programasDeTV_porAño" +"="*50)
+    res = ProgramasDeTV_porAño(registros, type)
+    print (f"Hay {len(res)} Programas de TV. Lista de años de lanzamiento de menor a mayor:")
+    print(res)
+
 
 def main():
 
     test_abrir_ficherocsv('./data/plataforma_streaming.csv')
-    
+
     REGISTROS = abrir_ficherocsv('./data/plataforma_streaming.csv')
+    test_ProgramasDeTV_porAño(REGISTROS,"TV Show")
     
     
 if __name__ == '__main__':
